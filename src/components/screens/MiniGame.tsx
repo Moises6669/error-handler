@@ -14,16 +14,16 @@ interface FallingItem {
   speed: number;
 }
 
-const GAME_DURATION = 25;
-const WIN_SCORE = 20;
-const PLAYER_WIDTH = 50;
-const ITEM_SIZE = 35;
+const GAME_DURATION = 30;
+const WIN_SCORE = 15;
+const PLAYER_WIDTH = 60;
+const ITEM_SIZE = 45;
 
 const ITEMS = [
-  { emoji: '❤️', points: 1, weight: 5 },
-  { emoji: '🌹', points: 2, weight: 3 },
-  { emoji: '☕', points: 3, weight: 2 },
-  { emoji: '🐞', points: -1, weight: 2 },
+  { emoji: '❤️', points: 1, weight: 6 },
+  { emoji: '🌹', points: 2, weight: 4 },
+  { emoji: '☕', points: 3, weight: 3 },
+  { emoji: '🐞', points: -1, weight: 1 },
 ];
 
 export default function MiniGame({ onNext }: Props) {
@@ -65,7 +65,7 @@ export default function MiniGame({ onNext }: Props) {
       points: selected.points,
       x: Math.random() * 80 + 10, // 10% to 90%
       y: -5,
-      speed: 1.2 + Math.random() * 0.8,
+      speed: 0.6 + Math.random() * 0.4,
     };
 
     setItems(prev => [...prev, newItem]);
@@ -87,11 +87,11 @@ export default function MiniGame({ onNext }: Props) {
         const newY = item.y + item.speed;
 
         // Check collision with player
-        const playerLeft = playerXRef.current - 8;
-        const playerRight = playerXRef.current + 8;
+        const playerLeft = playerXRef.current - 12;
+        const playerRight = playerXRef.current + 12;
         const itemCenter = item.x;
 
-        if (newY >= 78 && newY <= 90 && itemCenter >= playerLeft && itemCenter <= playerRight) {
+        if (newY >= 72 && newY <= 92 && itemCenter >= playerLeft && itemCenter <= playerRight) {
           // Hit!
           setScore(s => {
             const newScore = Math.max(0, s + item.points);
