@@ -1,0 +1,125 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+  gap: 2rem;
+}
+
+.ticket {
+  width: 100%;
+  max-width: 340px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.8s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ticketHeader {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.celebration {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+}
+
+.ticketBody {
+  padding: 1.5rem;
+}
+
+.ticketRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+}
+
+.ticketLabel {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.ticketValue {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.confirmed {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #27ae60;
+  background: #e8f8f0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+.divider {
+  height: 1px;
+  background: #f0f0f0;
+}
+
+.ticketFooter {
+  padding: 1.5rem;
+  border-top: 2px dashed #f0f0f0;
+  text-align: center;
+}
+
+.message {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
+.instructions {
+  max-width: 340px;
+  text-align: center;
+  animation: fadeIn 1s ease 1s both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.screenshot {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.7;
+  background: #fff3cd;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ffc107;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #999;
+  animation: fadeIn 1s ease 1.5s both;
+}
+
+.status {
+  color: #27ae60;
+  margin-top: 0.3rem;
+}

@@ -1,0 +1,98 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: #0a0a0a;
+}
+
+.terminal {
+  width: 100%;
+  max-width: 380px;
+  background: #1a1a2e;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1rem;
+  background: #252540;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.headerTitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.body {
+  padding: 1.2rem;
+  min-height: 280px;
+}
+
+.line {
+  font-size: 0.8rem;
+  line-height: 1.8;
+  min-height: 1.4em;
+}
+
+.command {
+  color: #64ffda;
+}
+
+.success {
+  color: #a8e6cf;
+}
+
+.normal {
+  color: #888;
+}
+
+.progress {
+  color: #667eea;
+}
+
+.blank {
+  height: 0.5em;
+}
+
+.cursor {
+  display: inline-block;
+  color: #64ffda;
+  animation: blink 1s step-end infinite;
+  font-size: 0.8rem;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.continuePrompt {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #64ffda;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}

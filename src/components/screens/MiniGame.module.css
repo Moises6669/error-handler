@@ -1,0 +1,236 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* HUD */
+.hud {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  z-index: 10;
+}
+
+.hudItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+}
+
+.hudLabel {
+  font-size: 1rem;
+}
+
+.hudValue {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Progress bar */
+.progressBar {
+  margin: 0 1.5rem 0.5rem;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #f093fb);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* Game area */
+.gameArea {
+  flex: 1;
+  position: relative;
+  touch-action: none;
+  overflow: hidden;
+}
+
+.fallingItem {
+  position: absolute;
+  font-size: 1.8rem;
+  transform: translateX(-50%);
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.player {
+  position: absolute;
+  bottom: 10%;
+  font-size: 2.5rem;
+  transform: translateX(-50%);
+  transition: left 0.08s linear;
+  filter: drop-shadow(0 2px 8px rgba(255,255,255,0.3));
+}
+
+.hitFeedback {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  animation: hitPop 0.5s ease forwards;
+  pointer-events: none;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+@keyframes hitPop {
+  0% { opacity: 1; transform: translateX(-50%) scale(1); }
+  100% { opacity: 0; transform: translateX(-50%) scale(1.5) translateY(-30px); }
+}
+
+/* Ready state */
+.readyContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  flex: 1;
+  min-height: 100vh;
+}
+
+.readyTitle {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.instructions {
+  color: #a8b2d1;
+  font-size: 0.95rem;
+  line-height: 2;
+}
+
+.legend {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.goal {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.startBtn {
+  margin-top: 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+}
+
+.startBtn:active {
+  transform: scale(0.95);
+}
+
+/* Won state */
+.wonContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  flex: 1;
+  min-height: 100vh;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.checkmark {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.wonTitle {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.meter {
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 2.5rem;
+}
+
+.meterLabel {
+  color: #a8b2d1;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.meterBar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.meterFill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #ff6b6b, #f093fb, #667eea);
+  border-radius: 5px;
+  animation: fillUp 1.5s ease;
+}
+
+@keyframes fillUp {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.meterValue {
+  color: #f093fb;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.continueBtn {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 1rem 2.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(56, 239, 125, 0.3);
+}
+
+.continueBtn:active {
+  transform: scale(0.95);
+}
